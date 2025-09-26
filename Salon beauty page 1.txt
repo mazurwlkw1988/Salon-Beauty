@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Beauty</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F8E1E6; /* Pudrowy róż jako domyślne tło */
+            font-family: Arial, sans-serif;
+            background-image: url('salon-bg.jpg'); /* Wstaw własne zdjęcie tła */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 4em;
+            font-weight: bold;
+            color: #ff69b4;
+            text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+        }
+        .nav {
+            margin: 20px 0;
+        }
+        .nav button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav button:hover {
+            background-color: #ff4da6;
+        }
+        .tab-content {
+            display: none;
+            color: #ff69b4;
+            font-size: 1.2em;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .price-list {
+            margin-top: 10px;
+        }
+        .price-item {
+            margin: 5px 0;
+        }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: #ff69b4;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Salon Beauty</div>
+        <div class="nav">
+            <button onclick="openTab('depilacja')">Depilacja</button>
+            <button onclick="openTab('henna')">Henna pudrowa</button>
+        </div>
+        <div id="depilacja" class="tab-content active">
+            <h2>Depilacja</h2>
+            <p>Profesjonalna depilacja woskiem. Zapewniamy komfort i trwałe efekty!</p>
+            <div class="price-list">
+                <div class="price-item">Depilacja nóg (całość): 120 PLN</div>
+                <div class="price-item">Depilacja rąk: 80 PLN</div>
+                <div class="price-item">Depilacja wąsika: 30 PLN</div>
+            </div>
+        </div>
+        <div id="henna" class="tab-content">
+            <h2>Henna pudrowa</h2>
+            <p>Stylowa henna pudrowa dla pięknych i naturalnych brwi. Indywidualne podejście do każdej klientki.</p>
+            <div class="price-list">
+                <div class="price-item">Henna pudrowa (brwi): 50 EURO</div>
+                <div class="price-item">Henna z regulacją: 50 EURO</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>Facebook: <a href="https://www.facebook.com/share/16FUuhd1My/" style="color: #ff69b4;">salonbeauty</a></div>
+        <div>WhatsApp: +49 1521 0690599</div>
+        <div>Adres: Panningen</div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabContent;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+</body>
+</html>
